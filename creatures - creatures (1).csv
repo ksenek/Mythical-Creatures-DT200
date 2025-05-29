@@ -1,0 +1,31 @@
+id,name,type,description,origin
+1,Dragon,Celestial,Often associated with ancient myths and legends.,France
+2,Phoenix,Terrestrial,Can shape-shift or fly depending on the myth.,Norway
+3,Unicorn,Celestial,Possesses magical or supernatural abilities.,Slavic
+4,Griffin,Celestial,Often associated with ancient myths and legends.,Scotland
+5,Centaur,Celestial,Possesses magical or supernatural abilities.,Native America
+6,Mermaid,Celestial,Can shape-shift or fly depending on the myth.,Mexico
+7,Kraken,Terrestrial,Guardians of sacred places or objects.,Mexico
+8,Minotaur,Terrestrial,Often associated with ancient myths and legends.,Egypt
+9,Basilisk,Celestial,A legendary creature with immense power.,Norway
+10,Hydra,Celestial,A legendary creature with immense power.,Persia
+11,Chimera,Celestial,Can shape-shift or fly depending on the myth.,Mesopotamia
+12,Cyclops,Terrestrial,Can shape-shift or fly depending on the myth.,Scotland
+13,Pegasus,Terrestrial,Feared or revered by humans in folklore.,France
+14,Fairy,Terrestrial,Feared or revered by humans in folklore.,Japan
+15,Goblin,Celestial,Often associated with ancient myths and legends.,Greece
+16,Troll,Celestial,"Symbol of wisdom, strength, or mystery.",Native America
+17,Werewolf,Celestial,Guardians of sacred places or objects.,Norway
+18,Vampire,Terrestrial,Possesses magical or supernatural abilities.,Japan
+19,Zombie,Terrestrial,A legendary creature with immense power.,Native America
+20,Gorgon,Celestial,Guardians of sacred places or objects.,Ireland
+21,Yeti,Terrestrial,A legendary creature with immense power.,Egypt
+22,Banshee,Terrestrial,"Symbol of wisdom, strength, or mystery.",Ireland
+23,Selkie,Celestial,Guardians of sacred places or objects.,Japan
+24,Wendigo,Celestial,"Symbol of wisdom, strength, or mystery.",Norway
+25,Sphinx,Celestial,Feared or revered by humans in folklore.,Norway
+26,Naga,Terrestrial,Often associated with ancient myths and legends.,Egypt
+27,Kelpie,Terrestrial,Feared or revered by humans in folklore.,Greece
+28,Imp,Terrestrial,"Symbol of wisdom, strength, or mystery.",Romania
+29,Djinn,Terrestrial,A legendary creature with immense power.,Scotland
+30,Manticore,Celestial,Can shape-shift or fly depending on the myth.,Romania
