@@ -2,6 +2,9 @@ html {
     background-color: #333333;
 }
 
+*{
+    box-sizing: border-box;
+}
 body {
     background-color: navy;
     color: navajowhite;
@@ -102,4 +105,40 @@ form input[type="submit"]:hover {
     width: 150px;
     height: 200px;
     object-fit: contain;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensures the main title spans the full width of the grid */
+main h2 {
+    grid-column: 1 / 5;
+}
+
+main p {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+/* Style for each article block */
+article {
+    background-color: #555555;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+
+}
+
+form {
+    border: 1px solid #ffffff;
+    padding: 5px;
+    margin: 5px; 
 }
