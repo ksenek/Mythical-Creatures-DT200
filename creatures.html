@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h2>{{ title|capitalize }} Creatures</h2>
+    {% for creature in creatures %}
+        <article>
+            <h3>{{ creature[0]}}</h3>
+            <p>{{ creature[1]}}</p>
+            <p>{{ creature[2]}}</p>
+        </article>
+    {% endfor %}
+    
+
+{% endblock %}
+
+
+
+
+
+
