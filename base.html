@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mythical Creatures</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mythical Creatures Encyclopedia</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/creature/terrestrial">Terrestrial Creatures</a></li>
+            <li><a href="/creature/celestial">Celestial Creatures</a></li>
+        </ul>
+        <form method="POST" action="/search">
+            <input type="text" name="search", id="search">
+            <input type="submit" value="Search">
+        </form>
+    </nav>
+    <main>
+        {% block main %}
+        {% endblock %}   
+    </main>
+</body>
+</html>
