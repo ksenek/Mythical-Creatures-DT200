@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 from sqlite3 import Error
 
@@ -24,29 +24,67 @@ def render_home():
     return render_template('index.html')
 
 
-@app.route('/celestial')
-def render_celestial():
-    query = "SELECT name, description, origin FROM creatures WHERE type='celestial'"
+
+@app.route('/creature/<creature_type>')
+def render_creatures(creature_type):
+    title = creature_type.upper()
+    query = "SELECT name, description, origin  FROM creatures WHERE type=?"
     con = create_connection(DATABASE)
     cur = con.cursor()
 
-    cur.execute(query)
+    cur.execute(query, (title, ))
     creature_list = cur.fetchall()
     con.close()
-    return render_template('celestial.html', creatures=creature_list)
+    return render_template('creatures.html', creatures=creature_list, title=title)
 
 
-@app.route('/terrestrial')
-def render_terrestrial():
-    query = "SELECT name, description, origin  FROM creatures WHERE type='terrestrial'"
+def get_creatures(creature_type):
+    title = creature_type.upper()
+    query = "SELECT name, description, origin FROM creatures WHERE type=?"
     con = create_connection(DATABASE)
     cur = con.cursor()
 
-    cur.execute(query)
+    cur.execute(query, (title, ))
     creature_list = cur.fetchall()
     con.close()
-    return render_template('terrestrial.html', creatures=creature_list)
+
+    return creature_list
+
+def get_types():
+    con=create_connection(DATABASE)
+    query="SELECT DISTINCT type from creatures ORDER BY type ASC"
+    cur=con.cursor()
+    cur.execute(query)
+    records = cur.fetchall()
+    print(records)
+    for i in range(len(records)):
+        records[i] = records[i][0]
+    print(records)
+    return records
+
+@app.route('/search', methods=['GET', 'POST'])
+def render_search():
+    """Find all records which contain search item
+    POST contain search value
+    return a rendered page"""
+    search = request.form['search']
+    title = "Search for " + search
+    query = "SELECT name, description FROM creatures WHERE "\
+    "name LIKE ? or description LIKE ?"
+    search = "%" + search + "%"
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query, (search, search))
+    creature_list = cur.fetchall()
+    con.close()
+
+    return render_template("creatures.html", creatures=creature_list, title=title, types=get_types())
+
+
+
+
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
